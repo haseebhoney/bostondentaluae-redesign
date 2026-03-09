@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Boston Dental Center — Abu Dhabi's Premier Dental Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --teal:   #0a7a6e;
+  --teal2:  #0d9688;
+  --mint:   #e6f7f5;
+  --white:  #ffffff;
+  --offwhite: #f7fbfa;
+  --dark:   #0d2623;
+  --grey:   #6b7a79;
+  --light:  #d4ece9;
+  --accent: #ff6b35;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--white); font-family:'Plus Jakarta Sans',sans-serif; color:var(--dark); overflow-x:hidden; }
+
+/* ── TOPBAR ── */
+.topbar {
+  background:var(--teal);
+  padding:9px 80px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.topbar-left { display:flex; gap:28px; align-items:center; }
+.topbar a { color:rgba(255,255,255,0.8); text-decoration:none; font-size:13px; display:flex; align-items:center; gap:6px; }
+.topbar a:hover { color:#fff; }
+.topbar-right { color:rgba(255,255,255,0.7); font-size:12px; letter-spacing:0.08em; }
+
+/* ── NAV ── */
+nav {
+  background:var(--white);
+  border-bottom:1px solid var(--light);
+  padding:18px 80px;
+  display:flex; align-items:center; justify-content:space-between;
+  position:sticky; top:0; z-index:100;
+  box-shadow:0 2px 24px rgba(10,122,110,0.07);
+  transition:all .3s;
+}
+nav.scrolled { padding:14px 80px; box-shadow:0 4px 30px rgba(10,122,110,0.12); }
+.nav-logo { display:flex; flex-direction:column; }
+.nav-logo-text { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--dark); letter-spacing:-0.01em; }
+.nav-logo-text span { color:var(--teal); }
+.nav-logo-sub { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); margin-top:-2px; }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-size:14px; font-weight:500; color:var(--dark); text-decoration:none; transition:color .3s; position:relative; }
+.nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:var(--teal); border-radius:2px; transition:width .3s; }
+.nav-links a:hover { color:var(--teal); }
+.nav-links a:hover::after { width:100%; }
+.nav-right { display:flex; align-items:center; gap:14px; }
+.nav-phone { font-size:14px; font-weight:600; color:var(--teal); text-decoration:none; }
+.nav-cta {
+  font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+  background:var(--teal); color:var(--white); padding:13px 26px;
+  text-decoration:none; border-radius:4px; transition:all .3s;
+}
+.nav-cta:hover { background:var(--teal2); transform:translateY(-1px); box-shadow:0 6px 20px rgba(10,122,110,0.3); }
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; }
+.hamburger span { width:24px; height:2px; background:var(--dark); border-radius:2px; transition:all .3s; }
+
+/* ── HERO ── */
+#hero {
+  background:var(--dark);
+  display:grid; grid-template-columns:52fr 48fr;
+  min-height:90vh; overflow:hidden; position:relative;
+}
+.hero-bg-pattern {
+  position:absolute; inset:0; pointer-events:none; opacity:0.04;
+  background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.hero-content {
+  padding:100px 80px 80px 80px;
+  display:flex; flex-direction:column; justify-content:center; position:relative; z-index:2;
+}
+.hero-tag {
+  font-size:11px; font-weight:700; letter-spacing:0.32em; text-transform:uppercase;
+  color:var(--teal2); display:flex; align-items:center; gap:12px; margin-bottom:28px;
+  opacity:0; animation:fadeUp .7s .1s forwards;
+}
+.hero-tag::before { content:''; width:36px; height:2px; background:var(--teal2); border-radius:2px; }
+.hero-h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(44px,5.5vw,72px);
+  font-weight:700; line-height:1.06; color:var(--white);
+  margin-bottom:24px;
+  opacity:0; animation:fadeUp .7s .25s forwards;
+}
+.hero-h1 em { color:var(--teal2); font-style:italic; }
+.hero-desc {
+  font-size:16px; font-weight:300; line-height:1.8;
+  color:rgba(255,255,255,0.6); max-width:480px; margin-bottom:44px;
+  opacity:0; animation:fadeUp .7s .4s forwards;
+}
+.hero-btns {
+  display:flex; gap:14px; flex-wrap:wrap; margin-bottom:60px;
+  opacity:0; animation:fadeUp .7s .55s forwards;
+}
+.btn-teal {
+  font-size:13px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+  background:var(--teal2); color:var(--white); padding:17px 40px;
+  text-decoration:none; border-radius:4px; transition:all .3s;
+}
+.btn-teal:hover { background:#0ab09f; transform:translateY(-1px); box-shadow:0 8px 24px rgba(13,150,136,0.4); }
+.btn-outline {
+  font-size:13px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+  border:1px solid rgba(255,255,255,0.25); color:rgba(255,255,255,0.8); padding:17px 40px;
+  text-decoration:none; border-radius:4px; transition:all .3s;
+}
+.btn-outline:hover { border-color:var(--teal2); color:var(--teal2); }
+.hero-stats {
+  display:flex; gap:40px;
+  opacity:0; animation:fadeUp .7s .7s forwards;
+}
+.hero-stat-num { font-family:'Playfair Display',serif; font-size:32px; font-weight:700; color:var(--white); line-height:1; }
+.hero-stat-lbl { font-size:12px; color:rgba(255,255,255,0.4); margin-top:4px; letter-spacing:0.04em; }
+.hero-stat-div { width:1px; background:rgba(255,255,255,0.1); }
+
+/* Hero Visual */
+.hero-visual {
+  position:relative; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+}
+.hero-visual img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.45; }
+.hero-visual-overlay { position:absolute; inset:0; background:linear-gradient(to right, var(--dark) 0%, rgba(13,38,35,0.2) 60%, transparent 100%); }
+.hero-card {
+  position:absolute; bottom:40px; right:40px;
+  background:rgba(255,255,255,0.07); backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.12); border-radius:12px;
+  padding:20px 24px; z-index:3;
+}
+.hero-card-title { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal2); margin-bottom:6px; }
+.hero-card-val { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--white); }
+.hero-card-sub { font-size:12px; color:rgba(255,255,255,0.4); margin-top:2px; }
+.hero-badge-teal {
+  position:absolute; top:40px; right:40px;
+  background:var(--teal2); color:var(--white);
+  padding:10px 18px; border-radius:30px; z-index:3;
+  font-size:12px; font-weight:700; letter-spacing:0.06em;
+}
+
+/* ── SERVICES STRIP ── */
+.services-strip {
+  background:var(--teal);
+  padding:20px 80px;
+  display:flex; align-items:center; gap:0; overflow:hidden;
+}
+.strip-item {
+  display:flex; align-items:center; gap:10px;
+  padding:0 40px; border-right:1px solid rgba(255,255,255,0.15);
+  white-space:nowrap;
+}
+.strip-item:first-child { padding-left:0; }
+.strip-item:last-child { border-right:none; }
+.strip-dot { width:6px; height:6px; background:rgba(255,255,255,0.5); border-radius:50%; }
+.strip-txt { font-size:13px; font-weight:600; color:rgba(255,255,255,0.85); letter-spacing:0.06em; text-transform:uppercase; }
+
+/* ── SECTION BASE ── */
+section { padding:100px 80px; }
+.section-tag {
+  font-size:11px; font-weight:700; letter-spacing:0.3em; text-transform:uppercase;
+  color:var(--teal); display:flex; align-items:center; gap:10px; margin-bottom:16px;
+}
+.section-tag::before { content:''; width:28px; height:2px; background:var(--teal); border-radius:2px; }
+.section-h2 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,4vw,52px); font-weight:700; line-height:1.1; color:var(--dark); margin-bottom:20px;
+}
+.section-h2 em { color:var(--teal); font-style:italic; }
+.section-desc { font-size:16px; color:var(--grey); line-height:1.75; max-width:580px; }
+
+/* ── ABOUT ── */
+#about { background:var(--offwhite); }
+.about-grid { display:grid; grid-template-columns:45fr 55fr; gap:80px; align-items:center; }
+.about-img-wrap {
+  position:relative; border-radius:16px; overflow:hidden;
+  height:560px;
+}
+.about-img-wrap img { width:100%; height:100%; object-fit:cover; }
+.about-img-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(10,122,110,0.4),rgba(13,38,35,0.2)); }
+.about-badge {
+  position:absolute; bottom:-20px; right:-20px;
+  background:var(--teal); color:var(--white);
+  width:130px; height:130px; border-radius:50%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; box-shadow:0 12px 40px rgba(10,122,110,0.4);
+}
+.about-badge-num { font-family:'Playfair Display',serif; font-size:36px; font-weight:700; line-height:1; }
+.about-badge-lbl { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; opacity:0.85; margin-top:4px; }
+.about-content { padding-left:20px; }
+.about-list { list-style:none; margin:32px 0; display:flex; flex-direction:column; gap:14px; }
+.about-list li {
+  display:flex; align-items:flex-start; gap:14px;
+  font-size:15px; color:var(--grey); line-height:1.6;
+}
+.about-list li::before {
+  content:'✓'; width:22px; height:22px; min-width:22px;
+  background:var(--mint); color:var(--teal); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:700; margin-top:1px;
+}
+.about-stats { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:36px; }
+.about-stat { background:var(--white); padding:22px; border-radius:10px; border:1px solid var(--light); }
+.about-stat-num { font-family:'Playfair Display',serif; font-size:30px; font-weight:700; color:var(--teal); }
+.about-stat-lbl { font-size:13px; color:var(--grey); margin-top:4px; }
+
+/* ── SERVICES ── */
+#services { background:var(--white); }
+.services-intro { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:60px; gap:40px; }
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.service-card {
+  background:var(--offwhite); border:1px solid var(--light);
+  border-radius:14px; padding:36px 30px;
+  transition:all .35s; cursor:default; position:relative; overflow:hidden;
+}
+.service-card::before {
+  content:''; position:absolute; bottom:0; left:0; right:0;
+  height:3px; background:var(--teal);
+  transform:scaleX(0); transition:transform .35s; transform-origin:left;
+}
+.service-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(10,122,110,0.12); border-color:var(--teal2); background:var(--white); }
+.service-card:hover::before { transform:scaleX(1); }
+.service-icon {
+  width:54px; height:54px; background:var(--mint); border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:24px; margin-bottom:20px; transition:all .35s;
+}
+.service-card:hover .service-icon { background:var(--teal); }
+.service-title { font-family:'Playfair Display',serif; font-size:20px; font-weight:600; color:var(--dark); margin-bottom:10px; }
+.service-desc { font-size:14px; color:var(--grey); line-height:1.7; }
+
+/* ── WHY US ── */
+#why { background:var(--teal); padding:100px 80px; }
+#why .section-tag { color:rgba(255,255,255,0.6); }
+#why .section-tag::before { background:rgba(255,255,255,0.4); }
+#why .section-h2 { color:var(--white); }
+#why .section-desc { color:rgba(255,255,255,0.65); }
+.why-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; margin-top:60px; }
+.why-features { display:flex; flex-direction:column; gap:28px; }
+.why-feature {
+  display:flex; gap:20px; align-items:flex-start;
+  padding:24px; background:rgba(255,255,255,0.06); border-radius:12px;
+  border:1px solid rgba(255,255,255,0.1); transition:all .3s;
+}
+.why-feature:hover { background:rgba(255,255,255,0.1); transform:translateX(6px); }
+.why-feat-icon {
+  width:48px; height:48px; min-width:48px;
+  background:rgba(255,255,255,0.12); border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:22px;
+}
+.why-feat-title { font-size:16px; font-weight:600; color:var(--white); margin-bottom:6px; }
+.why-feat-desc { font-size:14px; color:rgba(255,255,255,0.55); line-height:1.65; }
+.why-img-wrap {
+  position:relative; border-radius:16px; overflow:hidden; height:520px;
+}
+.why-img-wrap img { width:100%; height:100%; object-fit:cover; opacity:0.5; }
+.why-img-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(10,90,80,0.6),rgba(13,38,35,0.3)); }
+.why-cert {
+  position:absolute; bottom:30px; left:30px;
+  background:rgba(255,255,255,0.12); backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.2); border-radius:12px;
+  padding:18px 22px;
+}
+.why-cert-title { font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:4px; }
+.why-cert-val { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--white); }
+
+/* ── TEAM ── */
+#team { background:var(--offwhite); }
+.team-intro { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:60px; }
+.team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.team-card {
+  background:var(--white); border-radius:14px; overflow:hidden;
+  border:1px solid var(--light); transition:all .35s;
+}
+.team-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(10,122,110,0.12); }
+.team-img {
+  height:220px; background:linear-gradient(135deg, var(--mint), var(--teal));
+  display:flex; align-items:center; justify-content:center; font-size:56px; position:relative; overflow:hidden;
+}
+.team-img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.team-info { padding:20px; }
+.team-name { font-family:'Playfair Display',serif; font-size:18px; font-weight:600; color:var(--dark); margin-bottom:4px; }
+.team-role { font-size:12px; color:var(--teal); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:10px; }
+.team-spec { font-size:13px; color:var(--grey); line-height:1.55; }
+
+/* ── TESTIMONIALS ── */
+#testimonials { background:var(--white); }
+.testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:60px; }
+.testi-card {
+  background:var(--offwhite); border:1px solid var(--light);
+  border-radius:14px; padding:32px 28px; position:relative; transition:all .35s;
+}
+.testi-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(10,122,110,0.1); }
+.testi-quote {
+  font-family:'Playfair Display',serif;
+  font-size:48px; line-height:0.7; color:var(--teal); opacity:0.3;
+  position:absolute; top:20px; right:24px;
+}
+.testi-stars { color:#f5b820; font-size:14px; margin-bottom:14px; letter-spacing:2px; }
+.testi-text { font-size:15px; color:var(--grey); line-height:1.75; margin-bottom:20px; font-style:italic; }
+.testi-author { display:flex; align-items:center; gap:12px; }
+.testi-avatar {
+  width:42px; height:42px; border-radius:50%;
+  background:var(--mint); display:flex; align-items:center; justify-content:center;
+  font-size:16px; font-weight:700; color:var(--teal); font-family:'Playfair Display',serif;
+}
+.testi-name { font-size:14px; font-weight:600; color:var(--dark); }
+.testi-loc { font-size:12px; color:var(--grey); }
+
+/* ── CONTACT ── */
+#contact { background:var(--dark); }
+.contact-grid { display:grid; grid-template-columns:45fr 55fr; gap:80px; }
+.contact-info .section-h2 { color:var(--white); }
+.contact-info .section-desc { color:rgba(255,255,255,0.5); }
+.contact-items { margin-top:40px; display:flex; flex-direction:column; gap:20px; }
+.contact-item {
+  display:flex; gap:16px; align-items:flex-start;
+  padding:20px; background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07); border-radius:10px;
+  transition:all .3s;
+}
+.contact-item:hover { background:rgba(255,255,255,0.07); }
+.contact-icon {
+  width:44px; height:44px; min-width:44px; background:rgba(13,150,136,0.2);
+  border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px;
+}
+.contact-item-title { font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal2); margin-bottom:4px; }
+.contact-item-val { font-size:15px; color:rgba(255,255,255,0.75); }
+.contact-item-val a { color:rgba(255,255,255,0.75); text-decoration:none; }
+.contact-item-val a:hover { color:var(--teal2); }
+.contact-form { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:44px; }
+.form-title { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--white); margin-bottom:8px; }
+.form-sub { font-size:14px; color:rgba(255,255,255,0.4); margin-bottom:32px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-group { margin-bottom:16px; }
+.form-label { font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:8px; display:block; }
+.form-input, .form-select, .form-textarea {
+  width:100%; background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1); border-radius:8px;
+  padding:14px 16px; color:var(--white); font-family:'Plus Jakarta Sans',sans-serif; font-size:14px;
+  transition:border-color .3s; outline:none;
+}
+.form-input::placeholder, .form-textarea::placeholder { color:rgba(255,255,255,0.2); }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--teal2); background:rgba(13,150,136,0.08); }
+.form-select option { background:var(--dark); }
+.form-textarea { height:120px; resize:vertical; }
+.form-submit {
+  width:100%; background:var(--teal2); color:var(--white); border:none;
+  font-family:'Plus Jakarta Sans',sans-serif; font-size:13px; font-weight:700;
+  letter-spacing:0.16em; text-transform:uppercase; padding:17px;
+  border-radius:8px; cursor:pointer; transition:all .3s; margin-top:8px;
+}
+.form-submit:hover { background:#0ab09f; transform:translateY(-1px); box-shadow:0 8px 24px rgba(13,150,136,0.4); }
+
+/* ── FOOTER ── */
+footer { background:#070f0e; padding:80px 80px 0; }
+.footer-grid { display:grid; grid-template-columns:35fr 20fr 20fr 25fr; gap:60px; padding-bottom:60px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.footer-logo-text { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:var(--white); }
+.footer-logo-text span { color:var(--teal2); }
+.footer-logo-sub { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-top:-2px; margin-bottom:16px; }
+.footer-desc { font-size:14px; color:rgba(255,255,255,0.35); line-height:1.75; margin-bottom:24px; }
+.footer-socials { display:flex; gap:10px; }
+.fsocial {
+  width:36px; height:36px; border:1px solid rgba(13,150,136,0.3);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--teal2); font-size:13px; text-decoration:none;
+  border-radius:6px; transition:all .3s;
+}
+.fsocial:hover { background:var(--teal2); color:var(--white); border-color:var(--teal2); }
+.footer-col h4 { font-size:10px; font-weight:700; letter-spacing:0.28em; text-transform:uppercase; color:var(--teal2); margin-bottom:20px; }
+.footer-col ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.footer-col ul a { font-size:14px; color:rgba(255,255,255,0.35); text-decoration:none; transition:color .3s; }
+.footer-col ul a:hover { color:rgba(255,255,255,0.8); }
+.footer-addr { font-size:14px; color:rgba(255,255,255,0.35); line-height:1.8; }
+.footer-addr a { color:var(--teal2); text-decoration:none; }
+.footer-addr a:hover { color:#0ab09f; }
+.footer-bottom {
+  padding:22px 80px; display:flex; justify-content:space-between; align-items:center;
+  background:#070f0e;
+}
+.footer-copy { font-size:12px; color:rgba(255,255,255,0.2); }
+.footer-url { font-size:12px; color:rgba(255,255,255,0.12); }
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float {
+  position:fixed; bottom:28px; right:28px; z-index:999;
+  width:58px; height:58px; background:#25d366; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 24px rgba(37,211,102,0.5); text-decoration:none;
+  transition:all .3s; font-size:26px;
+}
+.wa-float:hover { transform:scale(1.1); box-shadow:0 10px 32px rgba(37,211,102,0.6); }
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity:1; transform:none; transition:opacity .7s ease, transform .7s ease; }
+.js-ready .reveal { opacity:0; transform:translateY(28px); }
+.js-ready .reveal.visible { opacity:1; transform:translateY(0); }
+.reveal-delay-1 { transition-delay:.1s; }
+.reveal-delay-2 { transition-delay:.2s; }
+.reveal-delay-3 { transition-delay:.3s; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+/* ── MOBILE MENU ── */
+.mobile-menu {
+  display:none; position:fixed; inset:0; z-index:200;
+  background:rgba(13,38,35,0.98); flex-direction:column;
+  align-items:center; justify-content:center; gap:32px;
+}
+.mobile-menu.open { display:flex; }
+.mobile-menu a { font-family:'Playfair Display',serif; font-size:28px; color:var(--white); text-decoration:none; }
+.mobile-menu a:hover { color:var(--teal2); }
+.close-menu { position:absolute; top:24px; right:28px; background:none; border:none; color:var(--white); font-size:30px; cursor:pointer; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background:var(--white); }
+::-webkit-scrollbar-thumb { background:var(--teal); border-radius:3px; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .topbar,.services-strip{ padding:10px 40px; }
+  nav,section,footer,#why,.footer-bottom{ padding-left:40px; padding-right:40px; }
+  #hero{ grid-template-columns:1fr; min-height:auto; }
+  .hero-visual{ height:360px; }
+  .hero-content{ padding:80px 40px 60px; }
+  .about-grid,.why-grid,.contact-grid{ grid-template-columns:1fr; gap:40px; }
+  .about-img-wrap,.why-img-wrap{ height:340px; }
+  .about-content{ padding-left:0; }
+  .team-grid{ grid-template-columns:repeat(2,1fr); }
+  .footer-grid{ grid-template-columns:1fr 1fr; gap:40px; }
+}
+@media(max-width:768px){
+  .topbar,.services-strip{ display:none; }
+  nav{ padding:16px 20px; }
+  .nav-links,.nav-right{ display:none; }
+  .hamburger{ display:flex; }
+  section,#why{ padding:60px 20px; }
+  footer{ padding:60px 20px 0; }
+  .footer-bottom{ padding:18px 20px; flex-direction:column; gap:8px; text-align:center; }
+  .services-grid,.testi-grid{ grid-template-columns:1fr; }
+  .team-grid{ grid-template-columns:1fr 1fr; }
+  .form-row{ grid-template-columns:1fr; }
+  .hero-stats{ gap:24px; flex-wrap:wrap; }
+  .about-stats{ grid-template-columns:1fr 1fr; }
+  .about-badge{ width:100px; height:100px; bottom:-10px; right:-10px; }
+  .about-badge-num{ font-size:28px; }
+  .footer-grid{ grid-template-columns:1fr; }
+  .services-intro,.team-intro{ flex-direction:column; align-items:flex-start; gap:16px; }
+  .contact-form{ padding:24px; }
+}
+@media(max-width:420px){
+  .hero-h1{ font-size:36px; }
+  .hero-btns{ flex-direction:column; }
+  .btn-teal,.btn-outline{ text-align:center; }
+  .team-grid{ grid-template-columns:1fr; }
+  .hero-card{ bottom:16px; right:16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="tel:+97126414888">📞 +971 2 641 4888</a>
+    <a href="mailto:info@bostondentaluae.com">✉ info@bostondentaluae.com</a>
+  </div>
+  <div class="topbar-right">Sat – Thu: 9:00 AM – 5:00 PM</div>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo">
+    <div class="nav-logo-text">Boston <span>Dental</span></div>
+    <div class="nav-logo-sub">Center — Abu Dhabi</div>
+  </div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#team">Our Team</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="tel:+97126414888" class="nav-phone">+971 2 641 4888</a>
+    <a href="#contact" class="nav-cta">Book Appointment</a>
+  </div>
+  <div class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu">
+  <button class="close-menu" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#why">Why Us</a>
+  <a href="#team">Our Team</a>
+  <a href="#testimonials">Reviews</a>
+  <a href="#contact">Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Abu Dhabi's Trusted Dental Clinic</div>
+    <h1 class="hero-h1">
+      Your Smile<br>Deserves<br><em>The Best</em> Care
+    </h1>
+    <p class="hero-desc">State-of-the-art dental care in the heart of Abu Dhabi. Our expert team of specialists combines cutting-edge technology with genuine compassion.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-teal">Book Free Consultation</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">15+</div>
+        <div class="hero-stat-lbl">Years in Abu Dhabi</div>
+      </div>
+      <div class="hero-stat-div"></div>
+      <div>
+        <div class="hero-stat-num">6</div>
+        <div class="hero-stat-lbl">Expert Specialists</div>
+      </div>
+      <div class="hero-stat-div"></div>
+      <div>
+        <div class="hero-stat-num">10K+</div>
+        <div class="hero-stat-lbl">Happy Patients</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=85&fit=crop" alt="Modern dental clinic"/>
+    <div class="hero-visual-overlay"></div>
+    <div class="hero-badge-teal">✓ DHA Certified</div>
+    <div class="hero-card">
+      <div class="hero-card-title">Next Available</div>
+      <div class="hero-card-val">Today</div>
+      <div class="hero-card-sub">Book your slot now →</div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="services-strip">
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-txt">Dental Implants</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-txt">Orthodontics</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-txt">Teeth Whitening</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-txt">Root Canal</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-txt">Cosmetic Restoration</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-txt">CEREC Same-Day Crowns</div></div>
+  <div class="strip-item"><div class="strip-dot"></div><div class="strip-txt">Children's Dentistry</div></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap reveal">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&q=85&fit=crop" alt="Boston Dental Center Abu Dhabi"/>
+      <div class="about-img-overlay"></div>
+      <div class="about-badge">
+        <div class="about-badge-num">15+</div>
+        <div class="about-badge-lbl">Years of Excellence</div>
+      </div>
+    </div>
+    <div class="about-content reveal reveal-delay-1">
+      <div class="section-tag">About Us</div>
+      <h2 class="section-h2">A Boutique Dental Experience <em>Unlike Any Other</em></h2>
+      <p class="section-desc">Strategically located in the heart of Abu Dhabi, Boston Dental Center is your go-to dentistry boutique — offering comprehensive services in a relaxed, friendly atmosphere designed to make every visit something you look forward to.</p>
+      <ul class="about-list">
+        <li>American Board certified dentists with international training</li>
+        <li>Cutting-edge technology including CEREC® same-day restorations</li>
+        <li>Patient-centered care with personalized treatment plans</li>
+        <li>Multilingual staff serving Abu Dhabi's diverse community</li>
+        <li>Open 6 days a week for your convenience</li>
+      </ul>
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="about-stat-num">10K+</div>
+          <div class="about-stat-lbl">Patients Treated</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">6</div>
+          <div class="about-stat-lbl">Dental Specialists</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">98%</div>
+          <div class="about-stat-lbl">Patient Satisfaction</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">8+</div>
+          <div class="about-stat-lbl">Specialties Offered</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-intro">
+    <div>
+      <div class="section-tag reveal">Our Services</div>
+      <h2 class="section-h2 reveal reveal-delay-1">Comprehensive Dental <em>Care</em></h2>
+    </div>
+    <p class="section-desc reveal reveal-delay-2" style="max-width:380px;">From routine checkups to full smile makeovers — we offer everything under one roof.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🦷</div>
+      <div class="service-title">Dental Implants</div>
+      <p class="service-desc">Permanent tooth replacement solutions using the latest implant technology for a natural look and feel that lasts a lifetime.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon">😁</div>
+      <div class="service-title">Orthodontic Treatment</div>
+      <p class="service-desc">Traditional braces and clear aligner options to straighten teeth and correct bite issues for a confident, aligned smile.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">✨</div>
+      <div class="service-title">Teeth Whitening</div>
+      <p class="service-desc">Professional-grade whitening treatments that safely and effectively brighten your smile by several shades in just one visit.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔬</div>
+      <div class="service-title">Root Canal Therapy</div>
+      <p class="service-desc">Gentle, modern root canal treatment to save infected teeth and eliminate pain — far more comfortable than you might think.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon">💎</div>
+      <div class="service-title">CEREC® Same-Day Crowns</div>
+      <p class="service-desc">Computer-designed ceramic restorations crafted and placed in a single appointment — no temporaries, no second visits.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">🌸</div>
+      <div class="service-title">Cosmetic Smile Makeover</div>
+      <p class="service-desc">A full transformation combining veneers, bonding, whitening and reshaping — tailored specifically to your facial aesthetics.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">👶</div>
+      <div class="service-title">Children's Dentistry</div>
+      <p class="service-desc">Gentle, fun dental care for children that builds positive habits and a love for healthy smiles from an early age.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon">🦠</div>
+      <div class="service-title">Gum Treatment</div>
+      <p class="service-desc">Expert diagnosis and management of gum disease, from scaling and root planing to advanced periodontal surgery.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">🫦</div>
+      <div class="service-title">Oral Surgery & Extractions</div>
+      <p class="service-desc">Simple and surgical extractions including wisdom teeth removal, performed with precision and patient comfort in mind.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div>
+    <div class="section-tag">Why Choose Us</div>
+    <h2 class="section-h2">The Boston Dental <em>Difference</em></h2>
+    <p class="section-desc">We don't just treat teeth — we build relationships based on trust, comfort and exceptional outcomes.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-features">
+      <div class="why-feature reveal">
+        <div class="why-feat-icon">🏆</div>
+        <div>
+          <div class="why-feat-title">American Board Certified Dentists</div>
+          <div class="why-feat-desc">Dr. Sonia Ahsan is an American Board Dentist — bringing world-class expertise to Abu Dhabi's patients.</div>
+        </div>
+      </div>
+      <div class="why-feature reveal reveal-delay-1">
+        <div class="why-feat-icon">⚡</div>
+        <div>
+          <div class="why-feat-title">CEREC® Same-Day Technology</div>
+          <div class="why-feat-desc">Get your crown designed, milled and fitted in a single visit using our state-of-the-art CAD/CAM system.</div>
+        </div>
+      </div>
+      <div class="why-feature reveal reveal-delay-2">
+        <div class="why-feat-icon">🤝</div>
+        <div>
+          <div class="why-feat-title">Personalized Treatment Plans</div>
+          <div class="why-feat-desc">We take time to understand your complete dental and medical history before recommending any treatment.</div>
+        </div>
+      </div>
+      <div class="why-feature reveal">
+        <div class="why-feat-icon">📍</div>
+        <div>
+          <div class="why-feat-title">Prime Abu Dhabi Location</div>
+          <div class="why-feat-desc">Conveniently located near Khalidiyah Mall on Al Falah Street — easy to reach from anywhere in Abu Dhabi.</div>
+        </div>
+      </div>
+    </div>
+    <div class="why-img-wrap reveal">
+      <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=700&q=85&fit=crop" alt="Dental technology"/>
+      <div class="why-img-overlay"></div>
+      <div class="why-cert">
+        <div class="why-cert-title">Our Promise</div>
+        <div class="why-cert-val">Every Visit, A Reason to Smile</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="team-intro reveal">
+    <div>
+      <div class="section-tag">Our Specialists</div>
+      <h2 class="section-h2">Meet the <em>Experts</em></h2>
+    </div>
+    <p class="section-desc" style="max-width:360px;">A handpicked team of experienced dental professionals dedicated to your smile.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <div class="team-img">👩‍⚕️</div>
+      <div class="team-info">
+        <div class="team-name">Dr. Sonia Saddaf Ahsan</div>
+        <div class="team-role">General Dentist</div>
+        <div class="team-spec">American Board Dentist. Known for exceptional chairside manner and meticulous attention to detail.</div>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-delay-1">
+      <div class="team-img">👨‍⚕️</div>
+      <div class="team-info">
+        <div class="team-name">Dr. Fadi Arroub</div>
+        <div class="team-role">Orthodontist</div>
+        <div class="team-spec">Specialist in braces and clear aligners. Brings a precise, aesthetic approach to teeth straightening.</div>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-delay-2">
+      <div class="team-img">👩‍⚕️</div>
+      <div class="team-info">
+        <div class="team-name">Dr. Madhura Belur Vasanth</div>
+        <div class="team-role">Orthodontist</div>
+        <div class="team-spec">Expert in complex orthodontic cases, helping patients achieve beautifully aligned smiles.</div>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-delay-3">
+      <div class="team-img">👩‍⚕️</div>
+      <div class="team-info">
+        <div class="team-name">Dr. Nuha Rayes</div>
+        <div class="team-role">Dentist</div>
+        <div class="team-spec">Dedicated to providing gentle, thorough dental care with a focus on patient comfort and education.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-tag reveal">Patient Reviews</div>
+  <h2 class="section-h2 reveal reveal-delay-1">What Our Patients <em>Say</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Dr. Sonia is the best dentist I've ever met — professional, careful, and focused. She's a shining dentist who made me feel completely at ease throughout my treatment.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div>
+          <div class="testi-name">Andrew M.</div>
+          <div class="testi-loc">Abu Dhabi, UAE</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">I usually have my treatments abroad, but Boston Dental's equipment and expertise match any international clinic. Currently undergoing treatment and couldn't be happier.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div>
+          <div class="testi-name">Sara K.</div>
+          <div class="testi-loc">Abu Dhabi, UAE</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">The CEREC technology is incredible — I got my crown done in one visit! The team is warm, professional, and made sure I understood every step. Highly recommend.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">R</div>
+        <div>
+          <div class="testi-name">Rania A.</div>
+          <div class="testi-loc">Khalidiyah, Abu Dhabi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <div class="section-tag" style="color:var(--teal2);">Get In Touch</div>
+      <h2 class="section-h2">Book Your <em>Appointment</em></h2>
+      <p class="section-desc">Ready for a healthier, more confident smile? Contact us today — our friendly team is happy to help.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-item-title">Address</div>
+            <div class="contact-item-val">Al Falah St, Behind Khalidiyah Mall<br>Abu Dhabi, UAE — P.O. Box 108549</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-item-title">Phone</div>
+            <div class="contact-item-val"><a href="tel:+97126414888">+971 2 641 4888</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉</div>
+          <div>
+            <div class="contact-item-title">Email</div>
+            <div class="contact-item-val"><a href="mailto:info@bostondentaluae.com">info@bostondentaluae.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-item-title">Working Hours</div>
+            <div class="contact-item-val">Saturday – Thursday: 9:00 AM – 5:00 PM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal reveal-delay-1">
+      <div class="form-title">Request an Appointment</div>
+      <div class="form-sub">Fill in your details and we'll confirm within 2 hours.</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input type="text" class="form-input" placeholder="Your first name"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-input" placeholder="Your last name"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Phone</label>
+          <input type="tel" class="form-input" placeholder="+971 xx xxx xxxx"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="your@email.com"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Service Required</label>
+        <select class="form-select">
+          <option value="">Select a service...</option>
+          <option>Dental Implants</option>
+          <option>Orthodontic Treatment</option>
+          <option>Teeth Whitening</option>
+          <option>Root Canal</option>
+          <option>CEREC® Same-Day Crown</option>
+          <option>Cosmetic Smile Makeover</option>
+          <option>Children's Dentistry</option>
+          <option>General Checkup</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message (Optional)</label>
+        <textarea class="form-textarea" placeholder="Any additional details about your dental concern..."></textarea>
+      </div>
+      <button class="form-submit">Book My Appointment →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-text">Boston <span>Dental</span></div>
+      <div class="footer-logo-sub">Center — Abu Dhabi</div>
+      <p class="footer-desc">State-of-the-art dental care in the heart of Abu Dhabi. We strive to make every visit an experience you look forward to.</p>
+      <div class="footer-socials">
+        <a href="#" class="fsocial">f</a>
+        <a href="#" class="fsocial">in</a>
+        <a href="#" class="fsocial">ig</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Dental Implants</a></li>
+        <li><a href="#">Orthodontics</a></li>
+        <li><a href="#">Teeth Whitening</a></li>
+        <li><a href="#">Root Canal</a></li>
+        <li><a href="#">CEREC® Crowns</a></li>
+        <li><a href="#">Gum Treatment</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Book Appointment</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-addr">
+        <p>Al Falah St, Behind Khalidiyah Mall<br>Abu Dhabi, UAE</p>
+        <br>
+        <p><a href="tel:+97126414888">+971 2 641 4888</a></p>
+        <p><a href="mailto:info@bostondentaluae.com">info@bostondentaluae.com</a></p>
+        <br>
+        <p style="color:var(--teal2);font-weight:600;">Sat – Thu: 9 AM – 5 PM</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <div class="footer-copy">© 2025 Boston Dental Center — Abu Dhabi, UAE. All Rights Reserved.</div>
+  <div class="footer-url">bostondentaluae.com</div>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/97126414888" target="_blank" class="wa-float" title="Chat on WhatsApp">💬</a>
+
+<script>
+  document.body.classList.add('js-ready');
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.05 });
+  reveals.forEach(r => observer.observe(r));
+
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+</script>
+</body>
+</html>
