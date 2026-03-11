@@ -17,10 +17,10 @@ nav{background:var(--white);border-bottom:1px solid var(--light);padding:0 80px;
 .nav-logo-text span{color:var(--teal);}
 .nav-logo-sub{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:-3px;}
 .nav-links{display:flex;gap:0;align-items:stretch;}
-.nav-links a,.nav-dropdown{font-size:13px;font-weight:500;color:var(--dark);text-decoration:none;padding:0 16px;display:flex;align-items:center;transition:all .25s;position:relative;border-bottom:3px solid transparent;white-space:nowrap;}
+.nav-links a,.nav-dropdown{font-size:13px;font-weight:500;color:var(--dark);text-decoration:none;padding:0 16px;display:flex;align-items:center;transition:all .25s;position:relative;border-bottom:3px solid transparent;white-space:nowrap;height:100%;box-sizing:border-box;cursor:pointer;}
 .nav-links a:hover,.nav-dropdown:hover{color:var(--teal);border-bottom-color:var(--teal2);}
 .nav-links a.active{color:var(--teal);border-bottom-color:var(--teal);}
-.dropdown{position:relative;}
+.dropdown{position:relative;display:flex;align-items:stretch;}
 .dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--light);border-top:2px solid var(--teal2);min-width:220px;box-shadow:0 12px 36px rgba(5,122,110,.12);z-index:200;}
 .dropdown:hover .dropdown-menu{display:block;}
 .dropdown-menu a{display:block;padding:11px 18px;font-size:13px;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--light);transition:all .2s;}
