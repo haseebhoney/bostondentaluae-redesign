@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Our Doctors — Boston Dental Center Abu Dhabi</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.doctors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.doctor-card{background:#fff;border:1px solid var(--light);border-radius:16px;overflow:hidden;transition:all .35s;}
+.doctor-card:hover{transform:translateY(-6px);box-shadow:0 18px 48px rgba(5,122,110,.13);}
+.doctor-photo{height:280px;background:linear-gradient(135deg,var(--mint),#9edbd5);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:72px;}
+.doctor-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;}
+.doctor-body{padding:24px;}
+.doctor-name{font-family:'Fraunces',serif;font-size:21px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+.doctor-role{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;display:flex;align-items:center;gap:6px;}
+.doctor-role::before{content:'';width:18px;height:2px;background:var(--teal);border-radius:2px;}
+.doctor-bio{font-size:14px;color:var(--grey);line-height:1.7;margin-bottom:18px;}
+.doctor-specs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.doc-spec{background:var(--mint);color:var(--teal);font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;}
+.doctor-book{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);text-decoration:none;border:1px solid var(--light);padding:10px 18px;border-radius:6px;transition:all .3s;}
+.doctor-book:hover{background:var(--teal);color:#fff;border-color:var(--teal);}
+.team-intro{max-width:680px;margin:0 auto 60px;text-align:center;}
+@media(max-width:1024px){.doctors-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.doctors-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-left"><a href="tel:+971502246848">📞 +971 50 224 6848</a><a href="tel:+97126667070">📞 02 666 7070</a><a href="/cdn-cgi/l/email-protection#bcd5d2dad3fcded3cfc8d3d2d8d9d2c8ddd0c9ddd992dfd3d1">✉ <span class="__cf_email__" data-cfemail="dbb2b5bdb49bb9b4a8afb4b5bfbeb5afbab7aebabef5b8b4b6">[email&#160;protected]</span></a></div>
+  <div class="topbar-right">Sat–Thu: 9AM–9PM &nbsp;|&nbsp; Fri: 9AM–6PM</div>
+</div>
+<nav>
+  <div class="nav-logo-wrap"><div class="nav-logo-text">Boston <span>Dental</span></div><div class="nav-logo-sub">Center — Abu Dhabi</div></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="dropdown"><a href="#" class="nav-dropdown">Discover BDC ▾</a><div class="dropdown-menu"><a href="about.html">Our Vision & Mission</a><a href="about.html#management">Meet the Management</a><a href="about.html#premises">Our Premises</a></div></div>
+    <a href="doctors.html" class="active">Doctors</a>
+    <div class="dropdown"><a href="services.html" class="nav-dropdown">Services ▾</a><div class="dropdown-menu"><a href="dental-implants.html">Dental Implants</a><a href="orthodontics.html">Orthodontic Treatment</a><a href="root-canal.html">Root Canal Treatment</a><a href="gingival.html">Gingival Treatment</a><a href="whitening.html">Teeth Whitening</a><a href="cosmetic.html">Cosmetic Restoration</a><a href="cerec.html">CEREC® by Computer</a><a href="tmd.html">TMD Treatment</a><a href="children.html">Children's Dentistry</a><a href="extraction.html">Simple & Surgical Extraction</a></div></div>
+    <div class="dropdown"><a href="#" class="nav-dropdown">Resources ▾</a><div class="dropdown-menu"><a href="technology.html">BDC Technology</a><a href="insurance.html">Insurance</a><a href="payment.html">Bank Installments</a><a href="payment.html">Tabby / Tamara</a><a href="offers.html">Offers & Promotions</a><a href="blog.html">Blog</a></div></div>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-right"><a href="tel:+971502246848" class="nav-phone">+971 50 224 6848</a><a href="contact.html" class="nav-cta">Book Appointment</a></div>
+  <div class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open')"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu">
+  <button class="close-menu" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="index.html">Home</a><a href="about.html">About BDC</a><a href="doctors.html">Doctors</a><a href="services.html">Services</a><a href="insurance.html">Insurance</a><a href="contact.html">Book Appointment</a>
+</div>
+
+<div class="page-banner">
+  <div class="page-banner-breadcrumb"><a href="index.html">Home</a> › <span>Our Doctors</span></div>
+  <h1>Meet Our <em>Specialist</em> Doctors</h1>
+  <p class="page-banner-desc">A carefully selected team of 9 expert dental professionals — each bringing years of specialized training and a genuine commitment to your smile and wellbeing.</p>
+</div>
+
+<div class="section">
+  <div class="team-intro reveal">
+    <div class="stag" style="justify-content:center;">Our Specialists</div>
+    <h2 class="sh2" style="text-align:center;">Expert Care, <em>Every Visit</em></h2>
+    <p class="sdesc" style="text-align:center;margin:0 auto;">At Boston Dental Center, we pride ourselves on assembling a team of highly qualified, experienced specialists across all fields of dentistry — ensuring you receive the right care from the right expert, every time.</p>
+  </div>
+  <div class="doctors-grid">
+    <div class="doctor-card reveal">
+      <div class="doctor-photo">👨‍⚕️</div>
+      <div class="doctor-body">
+        <div class="doctor-name">Dr. Anas Al Haj Ahmed</div>
+        <div class="doctor-role">Dental Specialist</div>
+        <p class="doctor-bio">Known for his remarkably calm and reassuring chairside manner, Dr. Anas has built a loyal patient base in Abu Dhabi. Patients consistently report that his gentle approach and expert technique make even complex procedures feel completely stress-free — some have even dozed off during extractions under his care.</p>
+        <div class="doctor-specs"><span class="doc-spec">Extractions</span><span class="doc-spec">Restorations</span><span class="doc-spec">General Dentistry</span></div>
+        <a href="contact.html" class="doctor-book">Book Appointment →</a>
+      </div>
+    </div>
+    <div class="doctor-card reveal rd1">
+      <div class="doctor-photo">👨‍⚕️</div>
+      <div class="doctor-body">
+        <div class="doctor-name">Dr. Arshiyan Ahmed</div>
+        <div class="doctor-role">Specialist Periodontist</div>
+        <p class="doctor-bio">Dr. Arshiyan is a highly experienced Specialist Periodontist with deep expertise in dental implants and advanced gum disease treatment. Trusted for complex and multi-stage implant cases, he is known for his meticulous attention to detail, thorough explanations and genuinely caring approach to patient care.</p>
+        <div class="doctor-specs"><span class="doc-spec">Dental Implants</span><span class="doc-spec">Periodontics</span><span class="doc-spec">Bone Grafting</span></div>
+        <a href="contact.html" class="doctor-book">Book Appointment →</a>
+      </div>
+    </div>
+    <div class="doctor-card reveal rd2">
+      <div class="doctor-photo">👩‍⚕️</div>
+      <div class="doctor-body">
+        <div class="doctor-name">Dr. Bobana Stankovic</div>
+        <div class="doctor-role">General Dentist</div>
+        <p class="doctor-bio">Dr. Bobana is celebrated for her ability to resolve complex dental cases that other specialists have struggled with. Her patients praise her clear communication, meticulous approach and exceptional outcomes. She makes every patient feel genuinely heard and keeps them fully informed throughout their treatment journey.</p>
+        <div class="doctor-specs"><span class="doc-spec">General Dentistry</span><span class="doc-spec">Complex Cases</span><span class="doc-spec">Restorations</span></div>
+        <a href="contact.html" class="doctor-book">Book Appointment →</a>
+      </div>
+    </div>
+    <div class="doctor-card reveal">
+      <div class="doctor-photo">👨‍⚕️</div>
+      <div class="doctor-body">
+        <div class="doctor-name">Dr. Fadi Arroub</div>
+        <div class="doctor-role">Specialist Orthodontist</div>
+        <p class="doctor-bio">Dr. Fadi brings a precise, highly aesthetic approach to orthodontic treatment. Whether treating children, teenagers or adults, he combines clinical expertise with an artist's eye for proportion and symmetry — ensuring that every corrected smile is not just straight, but truly beautiful and balanced.</p>
+        <div class="doctor-specs"><span class="doc-spec">Braces</span><span class="doc-spec">Clear Aligners</span><span class="doc-spec">Jaw Correction</span></div>
+        <a href="contact.html" class="doctor-book">Book Appointment →</a>
+      </div>
+    </div>
+    <div class="doctor-card reveal rd1">
+      <div class="doctor-photo">👩‍⚕️</div>
+      <div class="doctor-body">
+        <div class="doctor-name">Dr. Heba Aboushady</div>
+        <div class="doctor-role">General Dentist</div>
+        <p class="doctor-bio">Dr. Heba is a dedicated general dentist with a strong focus on preventive care and patient education. She takes the time to explain every step of treatment, empowering patients with the knowledge they need to maintain excellent oral health between visits. Known for her warmth and thoroughness.</p>
+        <div class="doctor-specs"><span class="doc-spec">Preventive Care</span><span class="doc-spec">Fillings</span><span class="doc-spec">Patient Education</span></div>
+        <a href="contact.html" class="doctor-book">Book Appointment →</a>
+      </div>
+    </div>
+    <div class="doctor-card reveal rd2">
+      <div class="doctor-photo">👨‍⚕️</div>
+      <div class="doctor-body">
+        <div class="doctor-name">Dr. Khaled Alamassi</div>
+        <div class="doctor-role">Dental Specialist</div>
+        <p class="doctor-bio">Dr. Khaled stands out for his extraordinary ability to connect with patients who are afraid of dental procedures. His patience, empathy and gentle technique have transformed the lives of patients who previously avoided dentistry altogether. He is consistently rated as one of the most compassionate dentists in Abu Dhabi.</p>
+        <div class="doctor-specs"><span class="doc-spec">Pain Management</span><span class="doc-spec">Anxiety Patients</span><span class="doc-spec">General Dentistry</span></div>
+        <a href="contact.html" class="doctor-book">Book Appointment →</a>
+      </div>
+    </div>
+    <div class="doctor-card reveal">
+      <div class="doctor-photo">👨‍⚕️</div>
+      <div class="doctor-body">
+        <div class="doctor-name">Dr. Sam Thomas</div>
+        <div class="doctor-role">Orthodontist</div>
+        <p class="doctor-bio">Dr. Sam is an experienced orthodontist specializing in comprehensive orthodontic treatment for patients of all ages. He combines evidence-based techniques with a personalized treatment approach, ensuring each patient's unique facial structure and bite are taken fully into account when designing their treatment plan.</p>
+        <div class="doctor-specs"><span class="doc-spec">Orthodontics</span><span class="doc-spec">Braces</span><span class="doc-spec">Bite Correction</span></div>
+        <a href="contact.html" class="doctor-book">Book Appointment →</a>
+      </div>
+    </div>
+    <div class="doctor-card reveal rd1">
+      <div class="doctor-photo">👩‍⚕️</div>
+      <div class="doctor-body">
+        <div class="doctor-name">Dr. Nuha Rayes</div>
+        <div class="doctor-role">Dentist</div>
+        <p class="doctor-bio">Dr. Nuha is a compassionate and highly professional dentist committed to delivering thorough, gentle care. She focuses on building long-term relationships with her patients, providing consistent, personalized care that prioritizes both their dental health and overall comfort at every appointment.</p>
+        <div class="doctor-specs"><span class="doc-spec">General Dentistry</span><span class="doc-spec">Cosmetic</span><span class="doc-spec">Preventive</span></div>
+        <a href="contact.html" class="doctor-book">Book Appointment →</a>
+      </div>
+    </div>
+    <div class="doctor-card reveal rd2">
+      <div class="doctor-photo">👨‍⚕️</div>
+      <div class="doctor-body">
+        <div class="doctor-name">Dr. Bashar E. Jaradah</div>
+        <div class="doctor-role">Specialist Periodontist</div>
+        <p class="doctor-bio">Dr. Bashar is a specialist periodontist with focused expertise in gum health management and dental implant placement. His meticulous, patient-first approach ensures that both complex gum treatments and implant procedures are performed with the highest levels of precision, care and long-term success.</p>
+        <div class="doctor-specs"><span class="doc-spec">Periodontics</span><span class="doc-spec">Implants</span><span class="doc-spec">Gum Surgery</span></div>
+        <a href="contact.html" class="doctor-book">Book Appointment →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div style="background:var(--teal);padding:64px 80px;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;">
+  <div>
+    <h2 style="font-family:'Fraunces',serif;font-size:clamp(24px,3vw,38px);font-weight:700;color:#fff;margin-bottom:10px;">Book with One of Our <em style="font-style:italic;color:rgba(255,255,255,.7);">Specialists Today</em></h2>
+    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:500px;line-height:1.65;">Our friendly team will match you with the right specialist for your needs. Available 6 days a week.</p>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+    <a href="contact.html" style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:#fff;color:var(--teal);padding:15px 34px;text-decoration:none;border-radius:3px;">Book Appointment</a>
+    <a href="tel:+971502246848" style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:2px solid rgba(255,255,255,.4);color:#fff;padding:13px 32px;text-decoration:none;border-radius:3px;">+971 50 224 6848</a>
+  </div>
+</div>
+
+<footer>
+  <div class="fgrid">
+    <div><div class="flogo">Boston <span>Dental</span></div><div class="flogo-sub">Center — Abu Dhabi, UAE</div><p class="fdesc">"The Power of Your Smile" — Comprehensive dental care in a friendly atmosphere.</p><div class="fsocials"><a href="#" class="fsoc">f</a><a href="#" class="fsoc">in</a><a href="#" class="fsoc">ig</a></div></div>
+    <div class="fcol"><h4>Services</h4><ul><li><a href="dental-implants.html">Dental Implants</a></li><li><a href="orthodontics.html">Orthodontics</a></li><li><a href="root-canal.html">Root Canal</a></li><li><a href="whitening.html">Teeth Whitening</a></li><li><a href="cerec.html">CEREC® Crowns</a></li><li><a href="cosmetic.html">Cosmetic Restoration</a></li></ul></div>
+    <div class="fcol"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About BDC</a></li><li><a href="doctors.html">Our Doctors</a></li><li><a href="insurance.html">Insurance</a></li><li><a href="contact.html">Book Appointment</a></li></ul></div>
+    <div class="fcol"><h4>Contact</h4><div class="faddr"><p>Al Falah St, Behind Khalidiyah Mall<br>Abu Dhabi — P.O. Box 108549</p><br><p><a href="tel:+971502246848">+971 50 224 6848</a></p><p><a href="/cdn-cgi/l/email-protection#c6afa8a0a986a4a9b5b2a9a8a2a3a8b2a7aab3a7a3e8a5a9ab"><span class="__cf_email__" data-cfemail="94fdfaf2fbd4f6fbe7e0fbfaf0f1fae0f5f8e1f5f1baf7fbf9">[email&#160;protected]</span></a></p><br><p><strong>Sat–Thu:</strong> 9AM – 9PM</p><p><strong>Fri:</strong> 9AM – 6PM</p></div></div>
+  </div>
+</footer>
+<div class="fbot"><div class="fcopy">© 2025 Boston Dental Center — Abu Dhabi, UAE. All Rights Reserved.</div></div>
+<a href="https://wa.me/971502246848" target="_blank" class="wa-float">💬</a>
+<sc

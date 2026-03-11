@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact & Book Appointment — Boston Dental Center Abu Dhabi</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.cinfo-item{display:flex;gap:16px;align-items:flex-start;padding:20px;background:var(--off);border:1px solid var(--light);border-radius:12px;margin-bottom:14px;transition:all .3s;}
+.cinfo-item:hover{border-color:var(--teal2);box-shadow:0 4px 16px rgba(5,122,110,.1);}
+.cinfo-icon{width:46px;height:46px;min-width:46px;background:var(--mint);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.cinfo-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:3px;}
+.cinfo-val{font-size:14px;color:var(--dark);}
+.cinfo-val a{color:var(--dark);text-decoration:none;}
+.cinfo-val a:hover{color:var(--teal);}
+.cform-wrap{background:var(--dark);border-radius:16px;padding:44px;}
+.cform-title{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:6px;}
+.cform-sub{font-size:14px;color:rgba(255,255,255,.35);margin-bottom:28px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.fg{margin-bottom:14px;}
+.flabel{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:7px;display:block;}
+.finput,.fselect,.ftextarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:13px 15px;color:#fff;font-family:'Outfit',sans-serif;font-size:14px;outline:none;transition:border-color .3s;}
+.finput::placeholder,.ftextarea::placeholder{color:rgba(255,255,255,.18);}
+.finput:focus,.fselect:focus,.ftextarea:focus{border-color:var(--teal2);background:rgba(9,168,152,.07);}
+.fselect option{background:var(--dark);}
+.ftextarea{height:120px;resize:vertical;}
+.fsubmit{width:100%;background:var(--teal2);color:#fff;border:none;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:17px;border-radius:8px;cursor:pointer;transition:all .3s;margin-top:6px;}
+.fsubmit:hover{background:#0bbdab;box-shadow:0 8px 22px rgba(9,168,152,.4);}
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;}
+.hours-card{background:var(--off);border:1px solid var(--light);border-radius:10px;padding:18px;text-align:center;}
+.hours-day{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin-bottom:6px;}
+.hours-time{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--teal);}
+.map-placeholder{background:var(--off);border:1px solid var(--light);border-radius:14px;height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:28px;gap:10px;}
+.map-placeholder-icon{font-size:40px;}
+.map-placeholder-text{font-size:14px;color:var(--grey);}
+.map-placeholder a{font-size:13px;font-weight:600;color:var(--teal);text-decoration:none;}
+@media(max-width:768px){
+  .contact-grid{grid-template-columns:1fr;}
+  .frow{grid-template-columns:1fr;}
+  .hours-grid{grid-template-columns:1fr;}
+  .cform-wrap{padding:24px;}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-left"><a href="tel:+971502246848">📞 +971 50 224 6848</a><a href="tel:+97126667070">📞 02 666 7070</a><a href="/cdn-cgi/l/email-protection#c6afa8a0a986a4a9b5b2a9a8a2a3a8b2a7aab3a7a3e8a5a9ab">✉ <span class="__cf_email__" data-cfemail="90f9fef6ffd0f2ffe3e4fffef4f5fee4f1fce5f1f5bef3fffd">[email&#160;protected]</span></a></div><div class="topbar-right">Sat–Thu: 9AM–9PM &nbsp;|&nbsp; Fri: 9AM–6PM</div></div>
+<nav>
+  <div class="nav-logo-wrap"><div class="nav-logo-text">Boston <span>Dental</span></div><div class="nav-logo-sub">Center — Abu Dhabi</div></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="dropdown"><a href="#" class="nav-dropdown">Discover BDC ▾</a><div class="dropdown-menu"><a href="about.html">Our Vision & Mission</a><a href="about.html#management">Meet the Management</a><a href="about.html#premises">Our Premises</a></div></div>
+    <a href="doctors.html">Doctors</a>
+    <div class="dropdown"><a href="services.html" class="nav-dropdown">Services ▾</a><div class="dropdown-menu"><a href="dental-implants.html">Dental Implants</a><a href="orthodontics.html">Orthodontic Treatment</a><a href="root-canal.html">Root Canal Treatment</a><a href="gingival.html">Gingival Treatment</a><a href="whitening.html">Teeth Whitening</a><a href="cosmetic.html">Cosmetic Restoration</a><a href="cerec.html">CEREC® by Computer</a><a href="tmd.html">TMD Treatment</a><a href="children.html">Children's Dentistry</a><a href="extraction.html">Simple & Surgical Extraction</a></div></div>
+    <div class="dropdown"><a href="#" class="nav-dropdown">Resources ▾</a><div class="dropdown-menu"><a href="technology.html">BDC Technology</a><a href="insurance.html">Insurance</a><a href="payment.html">Bank Installments</a><a href="payment.html">Tabby / Tamara</a><a href="offers.html">Offers & Promotions</a><a href="blog.html">Blog</a></div></div>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+  <div class="nav-right"><a href="tel:+971502246848" class="nav-phone">+971 50 224 6848</a><a href="contact.html" class="nav-cta">Book Appointment</a></div>
+  <div class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open')"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu"><button class="close-menu" onclick="this.parentElement.classList.remove('open')">✕</button><a href="index.html">Home</a><a href="about.html">About BDC</a><a href="doctors.html">Doctors</a><a href="services.html">Services</a><a href="insurance.html">Insurance</a><a href="contact.html">Book Appointment</a></div>
+
+<div class="page-banner">
+  <div class="page-banner-breadcrumb"><a href="index.html">Home</a> › <span>Contact & Book Appointment</span></div>
+  <h1>Get In Touch &amp; <em>Book Your Visit</em></h1>
+  <p class="page-banner-desc">Our friendly team is available 6 days a week to help you schedule your appointment. Reach us by phone, WhatsApp, email or simply fill in the form below.</p>
+</div>
+
+<div class="section">
+  <div class="contact-grid">
+    <!-- LEFT: INFO -->
+    <div class="reveal">
+      <div class="stag">Contact Information</div>
+      <h2 class="sh2">We're Here <em>For You</em></h2>
+      <p class="sdesc" style="margin-bottom:28px;">Whether you have a question about our services, need to book an appointment, or want to find out about insurance coverage — we're always happy to help.</p>
+
+      <div class="cinfo-item">
+        <div class="cinfo-icon">📍</div>
+        <div>
+          <div class="cinfo-label">Clinic Address</div>
+          <div class="cinfo-val">Al Falah Street, Mubarak Bin Mohammed Street<br>Behind Khalidiyah Mall & opposite Abu Dhabi Blood Bank<br>P.O. Box 108549, Abu Dhabi, UAE</div>
+        </div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-icon">📞</div>
+        <div>
+          <div class="cinfo-label">Phone Numbers</div>
+          <div class="cinfo-val"><a href="tel:+971502246848">+971 50 224 6848</a> (Mobile / WhatsApp)<br><a href="tel:+97126667070">02 666 7070</a> (Landline)</div>
+        </div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-icon">✉</div>
+        <div>
+          <div class="cinfo-label">Email Address</div>
+          <div class="cinfo-val"><a href="/cdn-cgi/l/email-protection#5a33343c351a3835292e35343e3f342e3b362f3b3f74393537"><span class="__cf_email__" data-cfemail="4f262129200f2d203c3b20212b2a213b2e233a2e2a612c2022">[email&#160;protected]</span></a></div>
+        </div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-icon">💬</div>
+        <div>
+          <div class="cinfo-label">WhatsApp</div>
+          <div class="cinfo-val"><a href="https://wa.me/971502246848" target="_blank">Chat with us on WhatsApp →</a></div>
+        </div>
+      </div>
+
+      <div class="hours-grid">
+        <div class="hours-card"><div class="hours-day">Saturday – Thursday</div><div class="hours-time">9:00 AM – 9:00 PM</div></div>
+        <div class="hours-card"><div class="hours-day">Friday</div><div class="hours-time">9:00 AM – 6:00 PM</div></div>
+      </div>
+
+      <div class="map-placeholder">
+        <div class="map-placeholder-icon">📍</div>
+        <div class="map-placeholder-text">Al Falah St, Behind Khalidiyah Mall, Abu Dhabi</div>
+        <a href="https://www.google.com/maps/search/Boston+Dental+Center+Abu+Dhabi" target="_blank">View on Google Maps →</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="cform-wrap reveal rd1">
+      <div class="cform-title">Book an Appointment</div>
+      <div class="cform-sub">Fill in your details and we'll confirm your appointment within 2 hours during working hours.</div>
+      <div class="frow">
+        <div class="fg"><label class="flabel">First Name *</label><input type="text" class="finput" placeholder="Your first name"/></div>
+        <div class="fg"><label class="flabel">Last Name *</label><input type="text" class="finput" placeholder="Your last name"/></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label class="flabel">Phone / WhatsApp *</label><input type="tel" class="finput" placeholder="+971 xx xxx xxxx"/></div>
+        <div class="fg"><label class="flabel">Email Address</label><input type="email" class="finput" placeholder="your@email.com"/></div>
+      </div>
+      <div class="fg">
+        <label class="flabel">Preferred Doctor (Optional)</label>
+        <select class="fselect">
+          <option value="">No preference — assign me a specialist</option>
+          <option>Dr. Anas Al Haj Ahmed</option>
+          <option>Dr. Arshiyan Ahmed — Specialist Periodontist</option>
+          <option>Dr. Bobana Stankovic — General Dentist</option>
+          <option>Dr. Fadi Arroub — Specialist Orthodontist</option>
+          <option>Dr. Heba Aboushady — General Dentist</option>
+          <option>Dr. Khaled Alamassi</option>
+          <option>Dr. Sam Thomas — Orthodontist</option>
+          <option>Dr. Nuha Rayes — Dentist</option>
+          <option>Dr. Bashar E. Jaradah — Periodontist</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label class="flabel">Service Required *</label>
+        <select class="fselect">
+          <option value="">Select a service...</option>
+          <option>Dental Implants</option>
+          <option>Orthodontic Treatment (Braces / Aligners)</option>
+          <option>Root Canal Treatment</option>
+          <option>Gingival (Gum) Treatment</option>
+          <option>Teeth Whitening & Cleaning</option>
+          <option>Cosmetic Restoration / Veneers</option>
+          <option>CEREC® Same-Day Crown</option>
+          <option>TMD Treatment</option>
+          <option>Children's Dental Treatment</option>
+          <option>Simple or Surgical Extraction</option>
+          <option>General Checkup & Consultation</option>
+          <option>Other / Not Sure</option>
+        </select>
+      </div>
+      <div class="frow">
+        <div class="fg">
+          <label class="flabel">Preferred Date</label>
+          <input type="date" class="finput"/>
+        </div>
+        <div class="fg">
+          <label class="flabel">Preferred Time</label>
+          <select class="fselect">
+            <option value="">Any time</option>
+            <option>9:00 AM – 11:00 AM</option>
+            <option>11:00 AM – 1:00 PM</option>
+            <option>1:00 PM – 3:00 PM</option>
+            <option>3:00 PM – 5:00 PM</option>
+            <option>5:00 PM – 7:00 PM</option>
+            <option>7:00 PM – 9:00 PM</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label class="flabel">Tell Us About Your Concern</label><textarea class="ftextarea" placeholder="Please describe your dental concern, symptoms, or any relevant medical history we should know about..."></textarea></div>
+      <button class="fsubmit">Submit Appointment Request →</button>
+      <p style="font-size:12px;color:rgba(255,255,255,.25);margin-top:12px;text-align:center;">We'll contact you to confirm your appointment. Your information is kept strictly confidential.</p>
+    </div>
+  </div>
+</div>
+
+<footer><div class="fgrid"><div><div class="flogo">Boston <span>Dental</span></div><div class="flogo-sub">Center — Abu Dhabi, UAE</div><p class="fdesc">"The Power of Your Smile" — Comprehensive dental care in a friendly atmosphere.</p><div class="fsocials"><a href="#" class="fsoc">f</a><a href="#" class="fsoc">in</a><a href="#" class="fsoc">ig</a></div></div><div class="fcol"><h4>Services</h4><ul><li><a href="dental-implants.html">Dental Implants</a></li><li><a href="orthodontics.html">Orthodontics</a></li><li><a href="root-canal.html">Root Canal</a></li><li><a href="whitening.html">Teeth Whitening</a></li><li><a href="cerec.html">CEREC® Crowns</a></li><li><a href="cosmetic.html">Cosmetic Restoration</a></li></ul></div><div class="fcol"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About BDC</a></li><li><a href="doctors.html">Our Doctors</a></li><li><a href="insurance.html">Insurance</a></li><li><a href="contact.html">Book Appointment</a></li></ul></div><div class="fcol"><h4>Contact</h4><div class="faddr"><p>Al Falah St, Behind Khalidiyah Mall<br>Abu Dhabi — P.O. Box 108549</p><br><p><a href="tel:+971502246848">+971 50 224 6848</a></p><p><a href="/cdn-cgi/l/email-protection#11787f777e51737e62657e7f75747f65707d6470743f727e7c"><span class="__cf_email__" data-cfemail="60090e060f20020f13140f0e04050e14010c1501054e030f0d">[email&#160;protected]</span></a></p><br><p><strong>Sat–Thu:</strong> 9AM – 9PM</p><p><strong>Fri:</strong> 9AM – 6PM</p></div></div></div></footer>
+<div class="fbot"><div class="fcopy">© 2025 Boston Dent
